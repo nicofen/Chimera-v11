@@ -271,6 +271,7 @@ if sol_memecoin_vol_spike AND risk_off: regime = "high_volatility_scalp" → dir
 
 Underlying direction from `_build_signal()` is used if no regime override.
 
+<img width="2781" height="3235" alt="image" src="https://github.com/user-attachments/assets/dafc71e1-336d-4daa-a2fc-83f3a990a86c" />
 
 <img width="3141" height="3949" alt="image" src="https://github.com/user-attachments/assets/d0b2ec61-498c-4eaf-8822-b90d0a6153ea" />
 
