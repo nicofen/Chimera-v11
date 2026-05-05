@@ -3,6 +3,8 @@
 > **Automated multi-asset trading system built on an async agent architecture.**  
 > Trades stocks, crypto, forex, and futures through Alpaca — with AI-powered news filtering, regime-aware signal gating, real-time alerts, and a bias-corrected backtester.
 
+<img width="916" height="672" alt="image" src="https://github.com/user-attachments/assets/4d749a46-11db-4d49-a5fe-012f52018885" />
+
 ---
 
 ## ⚠️ Risk Disclaimer
@@ -159,6 +161,9 @@ DataAgent           NewsAgent                                    RegimeClassifie
                                                  ├─ TelegramSender
                                                  └─ DiscordSender
 ```
+
+<img width="825" height="878" alt="image" src="https://github.com/user-attachments/assets/fec08d63-e365-4271-b3b6-5d4741d85f7a" />
+
 
 Every agent is an `asyncio.Task`. They **never call each other directly** — all communication passes through `SharedState`. This makes each agent independently testable and allows any one of them to be restarted without taking down the others.
 
@@ -396,6 +401,7 @@ Entry price is estimated from the latest close in state (actual fill price set b
 ---
 
 ### OrderManager (OMS)
+<img width="807" height="535" alt="image" src="https://github.com/user-attachments/assets/35257815-2d30-4769-88af-97fc432301a5" />
 
 **File:** `oms/order_manager.py`
 
@@ -448,6 +454,8 @@ Three-stage ratchet for longs (mirrored for shorts):
 Stop only ever moves in your favour — never widened.
 
 #### Trade Logging (`oms/trade_logger.py`)
+<img width="799" height="337" alt="image" src="https://github.com/user-attachments/assets/641b1177-3d64-4cd1-b4e1-cda933e3051c" />
+
 
 Every order lifecycle event is persisted to SQLite (`chimera_trades.db`). Tables: `orders`, `breaker_events`.
 
@@ -470,6 +478,7 @@ Evaluates three independent trip conditions every 5 seconds.
 **Daily loss** includes unrealised P&L from open positions — the breaker fires before a bad trade fully closes.
 
 #### Trip Action
+<img width="816" height="344" alt="image" src="https://github.com/user-attachments/assets/489b671a-84e6-46b0-ad7b-a21b8821e7c1" />
 
 When any condition fires:
 1. `state.circuit_open = True` → signals and orders blocked immediately
@@ -495,6 +504,8 @@ breaker.reset("root cause identified, resuming")
 **Files:** `social/zscore.py`, `social/sentiment.py`, `social/scraper.py`, `social/monitor.py`
 
 #### Z-Score Engine (`social/zscore.py`)
+
+<img width="848" height="315" alt="image" src="https://github.com/user-attachments/assets/45f8aeb4-5f91-4f52-b359-ef59c9b9292d" />
 
 Tracks the abnormality of social mention rates per symbol:
 
@@ -557,6 +568,7 @@ Polls `SharedState` every 5 seconds and fires events for:
 ---
 
 ### Backtester
+<img width="840" height="397" alt="image" src="https://github.com/user-attachments/assets/2e6bc76f-c1fc-45fe-92a6-0d0f4e33ea9a" />
 
 **Files:** `backtest/engine.py`, `backtest/simulated_oms.py`, `backtest/data_loader.py`, `backtest/performance.py`
 
