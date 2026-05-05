@@ -266,6 +266,9 @@ if sol_memecoin_vol_spike AND risk_off: regime = "high_volatility_scalp" → dir
 
 Underlying direction from `_build_signal()` is used if no regime override.
 
+
+<img width="3141" height="3949" alt="image" src="https://github.com/user-attachments/assets/d0b2ec61-498c-4eaf-8822-b90d0a6153ea" />
+
 #### Sector B — Stocks (Squeeze Probability Score)
 
 The core equity strategy. Calculates `Sp ∈ [0, 1]`:
@@ -300,6 +303,9 @@ price ≤ VAL → long (mean-revert up)
 price ≥ VAH → short (mean-revert down)
 ```
 Confidence is fixed at `0.75` for value-area signals.
+
+<img width="2782" height="3235" alt="image" src="https://github.com/user-attachments/assets/a179031f-0766-498c-9f53-91c0f4d12c47" />
+
 
 #### Signal Emission Gate
 
