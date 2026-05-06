@@ -277,6 +277,8 @@ Underlying direction from `_build_signal()` is used if no regime override.
 
 #### Sector B — Stocks (Squeeze Probability Score)
 
+<img width="2487" height="2652" alt="image" src="https://github.com/user-attachments/assets/5976bbe1-4fb4-409d-931e-7a31d74ea1af" />
+
 The core equity strategy. Calculates `Sp ∈ [0, 1]`:
 
 ```
